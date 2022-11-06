@@ -1,0 +1,13 @@
+spells:
+  mind_blast:
+    base: 2043
+    shadowform: 2248
+    mastery: 2207
+    dark_ascension: 2554
+    voidform: 2517
+  mind_flay:
+    base: 558
+    shadowform: 614
+    mastery: 602
+    dark_ascension: 558
+    voidform: 687

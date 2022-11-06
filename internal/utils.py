@@ -6,7 +6,7 @@ def generate_apl(action_name, shadowform=False, mastery=False, dark_ascension=Fa
     if shadowform:
         apl = f"actions.precombat=shadowform\nactions={action_name}"
     if mastery:
-        apl = f"actions={action_name},if=dot.shadow_word_pain.ticking&dot.vampiric_touch.ticking\nactions+=/vampiric_touch,if=refreshable\nactions+=/shadow_word_pain,if=refreshable"
+        apl = f"actions=vampiric_touch,if=refreshable\nactions+=/shadow_word_pain,if=refreshable\nactions+=/{action_name},if=dot.shadow_word_pain.ticking&dot.vampiric_touch.ticking"
     if dark_ascension:
         apl = f"actions=dark_ascension\nactions+=/{action_name}"
     if void_eruption:
@@ -26,6 +26,10 @@ def spell_avg_matches(damage_events, expected_dmg):
 
 def spell_max_matches(damage_events, expected_dmg):
     return close_enough(max(damage_events), expected_dmg, 2)
+
+
+def affected_by_shadowform(damage_events, base_dmg_events):
+    return close_enough(mean(damage_events), (mean(base_dmg_events) * 1.1), 1)
 
 
 def affected_by_mastery(damage_events, base_dmg_events):

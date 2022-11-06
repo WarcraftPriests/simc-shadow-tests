@@ -1,5 +1,10 @@
 import subprocess
 
+class Data:
+  def __init__(self, direct, periodic):
+    self.direct = direct
+    self.periodic = periodic
+
 def run_sim(class_talents, spec_talents, apl, sim_file, spell_name):
     # replace apl with one provided from base sim file
     base = open(f"internal/sim_files/{sim_file}", "rt")
@@ -20,14 +25,18 @@ def run_sim(class_talents, spec_talents, apl, sim_file, spell_name):
 
 def analyze_sim(spell_name):
     simOutput = []
-    damage_list = []
+    direct_list = []
+    periodic_list = []
 
     with open(r"internal/sim_files/output.txt", 'r') as file:
         simOutput = file.readlines()
         file.close()
 
     for line in simOutput:
-        if 'direct amount for Action mind_blast' in line:
+        if f'direct amount for Action {spell_name}' in line:
             amount = float(line.split()[8].split('=')[1].strip())
-            damage_list.append(amount)
-    return damage_list
+            direct_list.append(amount)
+        if f'tick amount for Action {spell_name}' in line:
+            amount = float(line.split()[12].split('=')[1].strip())
+            periodic_list.append(amount)
+    return Data(direct_list, periodic_list)
