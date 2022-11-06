@@ -1,5 +1,6 @@
 # simc-shadow-priests
 internal/sim_files/output.txt
+internal/sim_files/out.simc
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
