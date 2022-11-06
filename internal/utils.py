@@ -32,13 +32,15 @@ def affected_by_shadowform(damage_events, base_dmg_events):
     return close_enough(mean(damage_events), (mean(base_dmg_events) * 1.1), 1)
 
 
-def affected_by_mastery(damage_events, base_dmg_events):
-    return close_enough(mean(damage_events), (mean(base_dmg_events) * 1.08), 1)
+def affected_by_mastery(damage_events, base_dmg_events, dots):
+    dot_increase = 1 + (dots * 0.04)
+    return close_enough(mean(damage_events), (mean(base_dmg_events) * dot_increase), 1)
 
 
 def affected_by_dark_ascension(damage_events, base_dmg_events):
     return close_enough(max(damage_events), (mean(base_dmg_events) * 1.25), 1)
 
 
-def affected_by_voidform(damage_events, base_dmg_events):
-    return close_enough(max(damage_events), (mean(base_dmg_events) * 1.12), 1)
+def affected_by_voidform(damage_events, base_dmg_events, dots=3, error=1):
+    dot_increase = 1 + (dots * 0.04)
+    return close_enough(max(damage_events), (mean(base_dmg_events) * dot_increase), error)

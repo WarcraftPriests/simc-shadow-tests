@@ -1,13 +1,29 @@
 spells:
   mind_blast:
-    base: 2043
-    shadowform: 2248
-    mastery: 2207
-    dark_ascension: 2554
-    voidform: 2517
+    base: 1800
+    shadowform: 1980
+    mastery: 1944
+    dark_ascension: 2250
+    voidform: 2217
   mind_flay:
-    base: 558
-    shadowform: 614
-    mastery: 602
-    dark_ascension: 558
-    voidform: 687
+    base: 491
+    shadowform: 540
+    mastery: 531
+    dark_ascension: 491
+    voidform: 605
+  shadow_word_pain:
+    base: 
+      direct: 463
+      periodic: 343
+    shadowform: 
+      direct: 509
+      periodic: 378
+    mastery: 
+      direct: 480
+      periodic: 356
+    dark_ascension:
+      direct: 578
+      periodic: 343
+    voidform: 
+      direct: 548
+      periodic: 407
