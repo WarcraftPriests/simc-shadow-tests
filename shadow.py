@@ -8,6 +8,7 @@ with open("config.yml", "r", encoding="utf8") as ymlfile:
 
 def test_mind_blast():
     """tests mind blast damage"""
+    # TODO: cooldown check, insanity check (base+whispers), coalescing shadows, insidious ire, execute_time
     action = "mind_blast"
     # base
     apl = utils.generate_apl(action)
