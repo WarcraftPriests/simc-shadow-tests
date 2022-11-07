@@ -33,10 +33,10 @@ def analyze_sim(spell_name):
         file.close()
 
     for line in simOutput:
-        if f'direct amount for Action {spell_name}' in line:
-            amount = float(line.split()[8].split('=')[1].strip())
+        if f'direct amount for Action {spell_name}:' in line:
+            amount = float(line.split()[9].split('=')[1].strip())
             direct_list.append(amount)
-        if f'tick amount for Action {spell_name}' in line:
+        if f'tick amount for Action {spell_name} on' in line:
             amount = float(line.split()[12].split('=')[1].strip())
             periodic_list.append(amount)
     return Data(direct_list, periodic_list)

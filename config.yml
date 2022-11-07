@@ -27,3 +27,41 @@ spells:
     voidform: 
       direct: 548
       periodic: 407
+  vampiric_touch:
+    base: 658
+    shadowform: 723
+    mastery: 683
+    dark_ascension: 658
+    voidform: 779
+  devouring_plague:
+    base: 
+      direct: 1523
+      periodic: 1266
+    shadowform: 
+      direct: 1675
+      periodic: 1392
+    mastery: 
+      direct: 1640
+      periodic: 1363
+    dark_ascension:
+      direct: 1904
+      periodic: 1266
+    voidform: 
+      direct: 1804
+      periodic: 1499
+  shadow_word_death:
+    base: 
+      normal: 1953
+      execute: 4883
+    shadowform: 
+      normal: 2148
+      execute: 5371
+    mastery: 
+      normal: 2109
+      execute: 5273
+    dark_ascension: 
+      normal: 2441
+      execute: 6103
+    voidform:
+      normal: 2406
+      execute: 6015
